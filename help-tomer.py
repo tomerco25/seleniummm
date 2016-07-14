@@ -12,6 +12,8 @@ that not below if __name__ == '__main__': will run.
 -- def __call__(self) - will run the lines below this function when only call the class versus calling the class+func
 
 -- copy class to other class(parent to child) - just put on child class the name of parent class a(): ** class b(a):
---
+--python to exe -> CMD-->pyinstaller --onefile pyfilelocation Example: pyinstaller --onefile C:\test1.py
+
+
 
 """
