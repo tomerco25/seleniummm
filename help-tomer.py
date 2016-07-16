@@ -14,6 +14,6 @@ that not below if __name__ == '__main__': will run.
 -- copy class to other class(parent to child) - just put on child class the name of parent class a(): ** class b(a):
 --python to exe -> CMD-->pyinstaller --onefile pyfilelocation Example: pyinstaller --onefile C:\test1.py
 
-
+--import pdb  # debbuging functions add line  pdb.set_trace()  before debug
 
 """
