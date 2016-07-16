@@ -16,4 +16,5 @@ that not below if __name__ == '__main__': will run.
 
 --import pdb  # debbuging functions add line  pdb.set_trace()  before debug
 
+-- ADD var to line "+VAR+"
 """
