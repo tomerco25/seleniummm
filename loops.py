@@ -24,3 +24,8 @@
 #    print 'Current fruit :', fruits[index]
 #    print index
 
+"""reveese string"""
+str = ''
+for letter in "hello":
+    str = letter + str
+print str

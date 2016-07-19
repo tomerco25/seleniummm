@@ -33,3 +33,11 @@ print tomdic.values()
 # input_list = string_input.split() #splits the input string on spaces
 # print input_list
 # process string elements in the list and make them integers
+
+""" reverse list"""
+
+str1="hello"
+strtolist=list(str1)
+strtolist.reverse()
+jointostr=''.join(strtolist)
+print jointostr
