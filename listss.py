@@ -34,13 +34,22 @@ print list(list3)
 # # print input_list
 # # process string elements in the list and make them integers
 #
-# """ reverse list"""
+# """ reverse list from string"""
 #
 # str1="hello"
 # strtolist=list(str1)
 # strtolist.reverse()
 # jointostr=''.join(strtolist)
 # print jointostr
+
+"""reverse list without reverse"""
+# list=[5,2,7,4,1,8,7,22,55,6,11,44,865]
+# for i in range(0,len(list)/2):
+#     firstvar=list[i]
+#     lastvar=list[len(list)-(i+1)]
+#     list[list.index(lastvar)]=firstvar
+#     list[list.index(firstvar)]=lastvar
+# print list
 
 """return index of item in list"""
 # fruits = ['banana', 'apple',  'mango']
