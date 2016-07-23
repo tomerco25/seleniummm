@@ -41,3 +41,13 @@ print list(list3)
 # strtolist.reverse()
 # jointostr=''.join(strtolist)
 # print jointostr
+
+"""return index of item in list"""
+# fruits = ['banana', 'apple',  'mango']
+# for i in fruits:
+#    print fruits.index(i)
+"""return index of item in dic"""
+# dic = {"banana":"yellow","apple":"red","mango":"orange"}
+# print dic
+# print dic.values()
+# print dic.keys()

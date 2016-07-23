@@ -42,3 +42,18 @@
 #         secondmax = tom[i]
 # print secondmax
 # print max
+
+"""Create a 2D array"""
+#board=[[0]*8 for n in range(8)]
+#OR:
+#board2=[[0 for j in range(8)] for n in range(8)]
+
+"""Queen game board"""
+# board=[[0]*8 for n in range(8)]
+# line=0
+# row=0
+# for i in board:
+#     board[line][row]="Q"
+#     row+=1
+#     line+=1
+# print board
