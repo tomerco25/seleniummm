@@ -49,7 +49,7 @@
 #board2=[[0 for j in range(8)] for n in range(8)]
 
 """Queen game board"""
-# board=[[0]*8 for n in range(8)]
+# board=[[0]*8 for n in range(8)] #[0]*8 - create this action for n in range(8) timer
 # line=0
 # row=0
 # for i in board:

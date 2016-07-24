@@ -33,15 +33,12 @@ print list(list3)
 # # input_list = string_input.split() #splits the input string on spaces
 # # print input_list
 # # process string elements in the list and make them integers
-#
-# """ reverse list from string"""
-#
+ """reverse list from string"""
 # str1="hello"
 # strtolist=list(str1)
 # strtolist.reverse()
 # jointostr=''.join(strtolist)
 # print jointostr
-
 """reverse list without reverse"""
 # list=[5,2,7,4,1,8,7,22,55,6,11,44,865]
 # for i in range(0,len(list)/2):
@@ -60,3 +57,21 @@ print list(list3)
 # print dic
 # print dic.values()
 # print dic.keys()
+"""add char to list"""
+# liststr = ("a", "b", "c")
+# print ''.join(liststr) #result abc
+# print '--'.join(liststr) #result a--b--c
+# print "--".join(liststr[0:2]) #result a--b
+"""Keep dictionary order"""
+"""before create dictionarty put lines:"""
+# import collections
+# tom = collections.OrderedDict()
+"""To USE dictionarty order:"""
+# tom={} NO!! tom={"dsad":"dasdsa","aaaa":"bbb"}
+# tom["z55zz"]="zzz"
+# tom["vvv"]="bbb"
+# tom["aaa"]="zzz"
+# tom["ccc"]="zzz"
+# result of print tom -- OrderedDict([('z55zz', 'zzz'), ('vvv', 'bbb'), ('aaa', 'zzz'), ('ccc', 'zzz')])
+# result of  print d.items() -- [('z55zz', 'zzz'), ('vvv', 'bbb'), ('aaa', 'zzz'), ('ccc', 'zzz')]
+# to separate -- for i,u in d.items():print i,u
