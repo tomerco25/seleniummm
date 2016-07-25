@@ -1,39 +1,29 @@
+from sys import path
+from os import getcwd
+path.append(getcwd() + "\\tests")
+import tests
+from tests import *
 
-class stuff():
-    __hidevalue=20
-    normalvalue=20
-    def __init__(self):
-        print "i am init"
-    def apple(self,aa):
-        print aa
-        self.aa=aa
-        print self.aa
-    def returnname(self):
-        return self.aa*2
-    def __call__(self):
-        print "i am call"
-class stuffchild(stuff):
-    def __init__(self):
-        pass
-    def __str__(self):
-        return "this is srt def"
+from excel_conf import *
+import os
+    # runsel=runselenuim(wallaurl,passurl)
+    # tom="usepass"
+    # a=getattr(runsel,tom)
+    # a()
+def runbyfile():
+    for i in  activetests():
+        runtest=i
+        os.popen('python "+runtest+".py')
+        testpath=(getcwd() + "\\tests\\"+runtest+"")
+        execfile(testpath) #runs python c:\test5.py
 
+def runbyname():
+    for i in activetests():
+        runtest = i[:-3]
+        a = getattr(eval(runtest),runtest) #runs test5.test5()
+        a()
 
-def main():
-    child1=stuffchild()
-    child1.apple("8768768768")
-    print child1
-    child1()
-    print ("-----------------------")
-    alwaysruncall=stuff()
-    print alwaysruncall.normalvalue
-    #print alwaysruncall.__hidevalue
-    alwaysruncall()
-    alwaysruninit=stuff()
-    alwaysruninit()
-    xx=stuff()
-    yy=stuff()
-    xx.apple('vvvvvvvvvv')
-    yy.apple('ttttttttt')
 if __name__ == '__main__':
-    main()
+    runbyfile()
+    print "-----------------"
+    runbyname()
