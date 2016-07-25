@@ -10,6 +10,7 @@ import os
     # tom="usepass"
     # a=getattr(runsel,tom)
     # a()
+
 def runbyfile():
     for i in  activetests():
         runtest=i
