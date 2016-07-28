@@ -12,7 +12,6 @@ def activetests():
         else:
             counter = int(counter) + 1
     return truetests
-
  # #write to excel
 # ws=wb.active
 # ws['D2']=432432
