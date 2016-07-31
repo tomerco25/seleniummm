@@ -17,4 +17,12 @@ that not below if __name__ == '__main__': will run.
 --import pdb  # debbuging functions add line  pdb.set_trace()  before debug
 
 -- ADD var to line "+VAR+"
+--__init__.py  - It is used to import a module(py file) in a directory,using import.
+we put __init__.py in each directorie so that we can import the py file.
+--change int to string - str(x) OR `x`   NO ''
+-- lambda - use like fuction -->
+lamb = lambda x: x ** 3
+print(lamb(5)) -->result 125(5*5*5)
+--*args - use on fuction when we don't know how much var will func receive --> def tom(*args):
+
 """
