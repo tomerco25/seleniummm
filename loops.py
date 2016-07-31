@@ -43,6 +43,11 @@
 # print secondmax
 # print max
 
+"""find missing number in list"""
+# a = [1,2,4,5,6,7,8,9,10,11]
+# print sum(range(a[0],a[-1]+1))-sum(a)
+
+
 """Create a 2D array"""
 #board=[[0]*8 for n in range(8)]
 #OR:
