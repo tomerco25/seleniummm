@@ -62,3 +62,10 @@
 #     row+=1
 #     line+=1
 # print board
+
+"""Using Queue - first in first out"""
+# q = Queue.Queue()    #or use q=Queue.LifoQueue() to First in Last out
+# for i in range(5):   #Or use list instead int
+#     q.put(i)
+# while not q.empty():
+#     print q.get()   #result 0 1 2 3 4
