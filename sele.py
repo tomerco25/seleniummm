@@ -1,12 +1,15 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import selenium
+from selenium.webdriver import *
 from config import *
 driver = webdriver.Chrome('C:\Python27\chromedriver.exe')
 class runselenuim():
-    def __init__(self,wallaurl,passurl):
+    def __init__(self,wallaurl,passurl,bbcurl,checkboxurl):
         self.wallaurl=wallaurl
         self.passurl=passurl
+        self.bbcurl=bbcurl
+        self.checkboxurl=checkboxurl
     def usepass(self):
         driver.get(self.passurl)
         #search = driver.find_element_by_xpath("//div[@id='signinDX']//form[@id='formx']//label[@id='luno']")
@@ -26,8 +29,23 @@ class runselenuim():
         else:
             print "success"
 
-runsel=runselenuim(wallaurl,passurl)
-runsel.usepass()
-runsel.walla()
+    def bbc(self):
+        driver.get(self.bbcurl)
+        print driver.title
+        search = driver.find_element_by_xpath("//div[@id='page']").text
+        print search
+        aa=driver.find_element_by_link_text("Republican splits grow over Trump")
+        print aa
+        aa.click()
+    def checkbox(self):
+        driver.get(self.checkboxurl)
+        driver.implicitly_wait(0)
+        driver.find_element_by_xpath("//input[@name='example2' and @type='radio']")
+
+runsel=runselenuim(wallaurl,passurl,bbcurl,checkboxurl)
+# runsel.usepass()
+# runsel.walla()
+#runsel.bbc()
+runsel.checkbox()
 
 

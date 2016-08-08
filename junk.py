@@ -1,0 +1,1 @@
+a=5 if 'to' in 'tomer' else 7
