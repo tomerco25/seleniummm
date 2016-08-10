@@ -17,6 +17,7 @@ that not below if __name__ == '__main__': will run.
 --import pdb  # debbuging functions add line  pdb.set_trace()  before debug
 
 -- ADD var to line "+VAR+"
+--ADD var to print "hello %s" %var   OR "hello {}".format(var)
 --__init__.py  - It is used to import a module(py file) in a directory,using import.
 we put __init__.py in each directorie so that we can import the py file.
 --change int to string - str(x) OR `x`   NO ''
