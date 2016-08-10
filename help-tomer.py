@@ -11,7 +11,6 @@ that not below if __name__ == '__main__': will run.
 -- def __init__(self) -constructor - will always run the lines in this function when call the class AND calling the class+func
 -- def __call__(self) - will run the lines below this function when only call the class versus calling the class+func
 -- def __str__(self): return print "something" -- will always print "something" when calling only the print + class without ()
--- copy class to other class(parent to child) - just put on child class the name of parent class a(): ** class b(a):
 --python to exe -> CMD-->pyinstaller --onefile pyfilelocation Example: pyinstaller --onefile C:\test1.py
 
 --import pdb  # debbuging functions add line  pdb.set_trace()  before debug
@@ -25,5 +24,10 @@ we put __init__.py in each directorie so that we can import the py file.
 lamb = lambda x: x ** 3
 print(lamb(5)) -->result 125(5*5*5)
 --*args - use on fuction when we don't know how much var will func receive --> def tom(*args):
+-- copy class to other class(parent to child) - just put on child class the name of parent class a(): ** class b(a):
+--When calling module to class we need to add in class "module.__init__(self)"
+  EXAmple: class test(threading.Thread)
+             threading.Thread.__init__(self)
 
+--with - we will use with to open and close operations like(file open,lock)(instead of using file open&close)
 """
