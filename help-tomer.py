@@ -30,5 +30,7 @@ print(lamb(5)) -->result 125(5*5*5)
              threading.Thread.__init__(self)
 
 --with - we will use with to open and close operations like(file open,lock)(instead of using file open&close)
---threading - rach time we want to use 1 theard to do opeartion we need to use acquire&release
+--threading - each time we want to use 1 theard to do opeartion we need to use acquire&release
+--Ride-selenium GUI(Google selenium2library keywords) -open by cmd- "cd C:\Python27\Scripts" -->python ride.py
+
 """
