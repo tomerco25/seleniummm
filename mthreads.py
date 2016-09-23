@@ -7,7 +7,7 @@ sheet_ranges = wb['Sheet1']
 tlock=threading.Lock()
 def printexcel():
     global count
-    tlock.acquire() #also we can use with tlock: instead acquire&release(see below)
+    tlock.acquire() #also we can use "with tlock:" instead acquire&release(see below)
     print "------Starting {}------".format(threading.current_thread().name)
     tlock.release()
     while (sheet_ranges['A'+str(count)+''].value != None):
