@@ -4,7 +4,7 @@ import logging
 
 logA=logging.getLogger("this is AAAAA {}".format(__name__))
 logB=logging.getLogger("this is BBBB {}".format(__name__))
-logging.basicConfig(level=logging.INFO,filename="c:/1/log.log",format='%(asctime)s:[%(levelname)s]:[%(name)s]:[%(module)s]:%(message)s')
+logging.basicConfig(level=logging.INFO,format='%(asctime)s:[%(levelname)s]:[%(name)s]:[%(module)s]:%(message)s') #filename="c:/1/log.log"
 # log.setLevel(logging.INFO)
 try:
     logA.info('We Will try to divide by 0')

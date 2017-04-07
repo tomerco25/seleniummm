@@ -1,16 +1,12 @@
 from sys import path
 import threading
 from os import getcwd
-path.append(getcwd() + "\\tests")
 import tests
 from tests import *
-
 from excel_conf import *
 import os
-    # runsel=runselenuim(wallaurl,passurl)
-    # tom="usepass"
-    # a=getattr(runsel,tom)
-    # a()
+
+path.append(getcwd() + "\\tests")
 
 def runbyfile():
     for i in  activetests():
