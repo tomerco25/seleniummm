@@ -13,7 +13,7 @@ def runbyfile():
         runtest=i
         os.popen('python "+runtest+".py')
         testpath=(getcwd() + "\\tests\\"+runtest+"")
-        execfile(testpath) #runs python c:\test5.py
+        execfile(testpath) #runs only python c:\test3.py beacuse name=main in file
 
 def runbyname():
     for i in activetests():
