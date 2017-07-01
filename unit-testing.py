@@ -3,6 +3,9 @@ from test import test_support
 
 class MyTestCase1(unittest.TestCase): #!!!MUST USE the word:test in all functions
 
+    def nn_jj(self):
+        self.vv=3/0
+
     def setUp(self): #code to execute in preparation for tests
         self.a = 5
 

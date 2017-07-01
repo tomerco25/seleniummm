@@ -9,16 +9,19 @@ rawdata=urllib2.urlopen(url)
 
 jsondata=urllib2.urlopen(url)
 jsondatastring=jsondata.read()
+print "--------------RAW json - python convert it to string--------------"
 print jsondatastring
-print "1---------------------"
+print ''
+
+print "1--------------------- json.load - load will convert it to dic&list-------------"
 dataload=json.load(rawdata)
 print  dataload
-print "2---------------------"
-findvalue=dataload['name']
-print findvalue
-print "3---------------------"
+print ''
+
+print "3---------------------json.dumps will convert it from dic&list back to string---------"
 datadumps=json.dumps(dataload)
 print datadumps
-print "4---------------------"
-datadumpsraw=json.dumps(jsondatastring)
-print datadumpsraw
+
+print "2---------------------findvalue"
+findvalue=dataload['weather'][0]['main']
+print findvalue+

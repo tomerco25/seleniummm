@@ -1,0 +1,4 @@
+{
+  "using-pytest.py::test_z": true, 
+  "using-pytest.py::test_z1": true
+}
