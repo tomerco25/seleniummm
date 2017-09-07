@@ -33,4 +33,8 @@ print(lamb(5)) -->result 125(5*5*5)
 --threading - each time we want to use 1 theard to do opeartion we need to use acquire&release
 --Ride-selenium GUI(Google selenium2library keywords) -open by cmd- "cd C:\Python27\Scripts" -->python ride.py
 
+to Use HEBREW put this two line at the start of script:
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 """
