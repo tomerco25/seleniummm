@@ -1,0 +1,163 @@
+
+NFV - וירטואליזציה של פונקציות רשת,מערכת אפליקציות תקשורת בענן network function virtualization),שכבת היישומים והיכולות של הרשת בענן.
+SDN - ניהול רשתות פיזיות באמצעות תוכנה
+VNF -  פונקציית רשת וירטואלית
+nic-network card - כרטיס רשת
+Node-   כל רכיב המהווה חלק מרשת מחשבים ומסוגל לשלוח, לקבל ולהעביר חבילות מידע באותה הרשת
+		צמתים יכולים להיות מחשבים, מחשבי כף יד, טלפונים סלולריים או רכיבי רשת כמו גשרים, רכזות ונתבים
+
+Routing Table - היא טבלה המוחזקת במסד נתונים או בקובץ על גבי רכיב כלשהו ברשת תקשורת (נתב), ומשמשת לאחסון המידע הנדרש לניתוב חבילות ברשת.
+metadata-details about file/service (like mp3 metadata is :song name,artist,genre..)
+
+--------------------------------------------------------------
+Hypervisor- virtual machine monitor-Vm manger-
+type 1-is installed direct on hardware(HW-Hypervisor-VM) examples:VMware ESXi, Xen, Microsoft Hyper-V
+type 2- is installed on OS(HW-OS-Hypervisor-VM) examples:  Linux KVM ,VMware Workstation, VMware Fusion, Windows Virtual PC, VirtualBox, Parallels, MokaFive,
+--------------------------------------------------------------
+Docker-unlike a virtual machine, rather than creating a whole virtual operating system to run specific applications Docker allows
+to use the same Linux kernel as the system that they're running on with  the requires applications. "C:\Users\Tomerco\Desktop\Info\vm-vs-docker-container.png"
+--------------------------------------------------------------
+centos - linux os
+cassandra - Nosql DB
+--------------------------------------------------------------
+openstack:
+keystone-users
+Horizon- Dashboard
+Glance - Image Services - managing vms images
+Nova- running and managing VMs
+Nova Networking \ Neutron   - managing Networking Services
+Cinder‏ - OpenStack Block Storage - Block storage is a type of data storage typically used in (SAN) environments where data is stored in volumes, also referred to as blocks ,Each block acts as an individual hard drive.
+Swift - OpenStack Object Storage - object include data+metadata - every object as unique id.
+Heat - service that can bulid orchestration of openstack using yaml file
+	Stack: In Heat parlance, a stack is the collection of objects—or resources—that will be created by Heat.
+	Template: Heat uses the idea of a template to define a stack.
+		each template contains:
+
+		heat_template_version - indicates that the YAML document is a HOT template of the specified version.
+		description-This optional key allows for giving a description of the template
+		Parameters - input parameters that have to be provided by the user when instantiating the template
+		Resources - objects that Heat create and/or modify (using Parameters info-not must)
+		Output - information that is passed to the user via OpenStack Dashboard
+
+--------------------------------------------------------------
+"CRUD" (Create, Read, Update, Delete)
+--------------------------------------------------------------
+jenkins time - https://crontab.guru/examples.html
+--------------------------------------------------------------
+Linux:
+--------------------------------------------------------------
+VNcserver copy paste :
+vi /usr/bin/vncserver and replace "vncconfig -iconic" with "vncconfig SendPrimary=0 -iconic"
+-----
+Recoord vnc :
+----------------
+download vnc2flv and extract
+run: python setup.py install     in directory
+flvrec.py -P /qa-test-repo/scripts/utils/python_fwk/vnc2flv/root123.txt -e 4 -o /root/Desktop/test.flv 10.247.151.188:1 (-P txt password file,-e encodinf,-o filename ,host:port)
+
+flvrec.py -P /qa-test-repo/scripts/utils/python_fwk/vnc2flv/root123.txt -e 4 -o /root/Desktop/test.flv 10.247.151.188:1
+--------------------
+add shortcut to terminal:
+vi ~/.bashrc
+PATH=$PATH:/root/Desktop/pycharm-community-2016.3/bin
+-----
+Create command shortcut - alias (example:alias ll="ls -l"   when type ll now we will receive ls -l )
+-----
+find window pid :
+on terminal write than click on the window : xprop | awk '/PID/ {print $3}'
+with kill :                 killpid="$(xprop | awk '/PID/ {print $3}')";kill -9 $killpid
+----
+add minimize buttons:
+gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
+----
+if & for
+if [ "condition1" == "condition2" ] ;then action1 ;else action12 ;fi
+example:
+if [ "ls /root/Pictures/" == "" ] ;then echo "fdsfdsfdsf" ;else echo "1111111111" ;fi
+if [[ "$var"  ==  *"contains some string"* ]] ; then echo "contains" ;fi  -----only works with two [[ ]]
+
+for i in condition ;do action ;done
+for i in  ls /root/Pictures/*  ;do echo "aaa" ;done
+
+-----ls
+find file  in linux:
+find / -type f -name "tomer"
+-iname - no case
+ / = location
+-type f = file
+-type d = directory
+----------
+sed:
+find ./ -type f -exec sed -i -e 's/apple/orange/g' {} \;   ----find "apple" in all files on current dir (./) and replace with "orange"
+----------
+grep -rnw / -e "string to find"  -  find string in files, /location  OR grep -R "string"
+i - igonore case
+r - recursive
+n - display line number
+w - match all word
+l - return only the filename contain string
+| wc -l  - count
+grep -IRiL "string" - reverse search
+grep -irl "string" --include=*.log  - search string in log files
+grep -Pr "string$" - search exact string (dollar in end of string)
+cut -d'string' -f1   - cut string by location of f1
+
+-----
+tail -f logfile  - see live update to log file
+---------
+find pid by clicking on window:
+
+xprop _NET_WM_PID | cut -d' ' -f3
+{click on window}
+---------
+for i in $(ls -p |grep .log) ; do echo $i ; done  - loop on files
+for i in $(nova list|awk '{print $2}'|grep -vi id|grep -v '^$') ; do echo $i; echo "dsdsa" ; done
+--------------------------------------------------------------
+seach in vi :
+use "/" for next use "n"
+no case: use "/\cTomeR"
+--------------------------------------------------------------
+SSH:copy key to multi hosts
+create file:  vi ~/.ssh/config    and add the text:
+Host *
+    StrictHostKeyChecking no
+
+run:
+sshpass -p root ssh-copy-id -i ~/.ssh/id_rsa.pub root@host ; sleep 2 &    (-p password)
+sshpass -p root ssh-copy-id -i ~/.ssh/id_rsa.pub root@host ; sleep 2 &
+
+-------------
+rsync --existing -raz --progress source destination   -sync only updated and exiting files from source to destination
+r-recursivly(all sub folders)
+-a-archive(keep all premmsion of files)
+-z - compress data(faster job)
+--progress - show log
+--existing - update only exiting files in target
+--dry-run  - just test the command fake run
+
+--------------------------------------------------------------
+Mount nfs drivr:
+vi /etc/fstab
+------------
+STORAGE:
+lvs - logical volume.
+pvs - show  physical volumes
+vgs -  show volume groups(physical volumes combine to volumes)
+
+lsblk - show all mounts
+pvcreate /dev/vdb - create phsycal disk (replace /dev/vdb with the disk- see disk on lsblk)
+vgextend vg new-disk - extend vg(use vgs to see vg) from disk2(/dev/vdb - the new disk-use pvs to see the new disk)
+exmaple "vgextend vh00 /dev/vdb"
+lvextend -L +90G /dev/vh00/root -r     -extend root with 90 giga
+--------------------------------------------------------------
+/qa-test-repo/test_production/Regression/Daily/   - Regression location
+--------------------------------------------------------------
+jenkins slaves ip:
+
+import java.net.*
+for (slave in Jenkins.instance.slaves) {
+  host = slave.computer.hostName
+  addr = InetAddress.getAllByName(host)
+  println slave.name + ": " + addr.hostAddress
+}
+--------------------------------------------------------------
