@@ -18,4 +18,3 @@ else:
     for i in range(10000):
         multilist.append(i)
     pool.map(process_line, multilist,20) # chunk/split the work into batches of 20 lines at a time
-
