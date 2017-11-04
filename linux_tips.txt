@@ -145,7 +145,7 @@ pvs - show  physical volumes
 vgs -  show volume groups(physical volumes combine to volumes)
 
 lsblk - show all mounts
-pvcreate /dev/vdb - create phsycal disk (replace /dev/vdb with the disk- see disk on lsblk)
+pvcreate /dev/vdb - create phsycal disk (replace vdb with the disk- see disk on lsblk)
 vgextend vg new-disk - extend vg(use vgs to see vg) from disk2(/dev/vdb - the new disk-use pvs to see the new disk)
 exmaple "vgextend vh00 /dev/vdb"
 lvextend -L +90G /dev/vh00/root -r     -extend root with 90 giga
