@@ -37,4 +37,4 @@ to Use HEBREW put this two line at the start of script:
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-""""""""""""
+"
