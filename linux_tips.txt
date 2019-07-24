@@ -160,4 +160,4 @@ for (slave in Jenkins.instance.slaves) {
   addr = InetAddress.getAllByName(host)
   println slave.name + ": " + addr.hostAddress
 }
---------------------------------------------------------------
+-----------------------------------------------------------
